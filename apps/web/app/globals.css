@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/cabinet-grotesk-400-latin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cabinet-grotesk-500-latin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/geist-400-latin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/geist-500-latin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/geist-mono-400-latin.woff2) format("woff2");
+}
+
+@layer base {
+  :root {
+    --black: #050505;
+    --ink: #080808;
+    --ink-2: #141414;
+    --red: #ed3327;
+    --red-hover: #d6261c;
+    --paper: #fbfbfb;
+    --white: #ffffff;
+    --line: rgba(255, 255, 255, 0.14);
+    --line-light: #e5e6e2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: visible;
+    min-height: 100%;
+  }
+}
+
+.font-heading {
+  font-family: "Cabinet Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-body {
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-mono {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.paper-texture {
+  background-color: #fbfbfb;
+  background-image: url("/images/paper.webp");
+  background-size: 1024px 1024px;
+}
+
+@keyframes marqueeX {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeX 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ed3327;
+}
